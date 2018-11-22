@@ -1,5 +1,5 @@
 # docker-iobroker-rpi
-Docker image for ioBroker (http://iobroker.net) based on resin/rpi-raspbian for Raspberry Pi (https://hub.docker.com/r/resin/rpi-raspbian/) Its tested an a Raspberry PI 3b with YAHM and iobroker running anlong with it.
+Docker image for ioBroker (http://iobroker.net) based on resin/rpi-raspbian for Raspberry Pi (https://hub.docker.com/r/resin/rpi-raspbian/) Its tested an a Raspberry PI 3b with YAHM and openHAB running anlong with it.
 
 ## Installation & Usage
 
