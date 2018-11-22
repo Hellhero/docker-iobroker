@@ -1,23 +1,42 @@
 # docker-iobroker-rpi
-Docker image for ioBroker (http://iobroker.net) based on resin/rpi-raspbian for Raspberry Pi (http://hub.docker.com/_/debian/)
-
-This project creates a Docker image for running ioBroker in a Docker container. It is made for and tested on a Raspberry Pi 3b with Docker CE and YAHM. But it should also work on other systems with Docker!<br>
-Cause the container ist based on resin/rpi-raspbian, it acts nearly like a full virtual machine. That makes it possible to easily add some additional dependies for some ioBroker-Adapters.
+Docker image for ioBroker (http://iobroker.net) based on resin/rpi-raspbian for Raspberry Pi (https://hub.docker.com/r/resin/rpi-raspbian/) Its tested an a Raspberry PI 3b with YAHM and iobroker running anlong with it.
 
 ## Installation & Usage
 
-For installing Docker on a Raspberry Pi 3b (recommended becaus the RAM is needet!) please refere here: https://docs.docker.com/install/linux/docker-ce/debian/#set-up-the-repository
+For installing Docker on a Raspberry Pi 3b please refere to: https://docs.docker.com/install/linux/docker-ce/debian/#set-up-the-repository
 
 The just download the repository and run: 
 
-
-
 ```
 docker build -t iobroker . 
+
+```
+
+to build the Image - this could take a while!
+
+To start the image run:
+
+```
 docker run -p 8081:8081 iobroker
 ```
 
-This could take a while!
+For producational use I would recommend to run it with docker-compose.
+
+To install docker-compose refere to https://docs.docker.com/compose/install/
+
+To deploy it you can use the following docker-compose.yml file
+
+```
+version: '3'
+services:
+	iobroker:
+		build: .
+		ports: 
+		 - "8081:8081"
+		 - "8082:8082"
+		 - "8083:8083"
+		 - "8084:8084"
+```
 
 
 ## Changelog
